@@ -8,6 +8,7 @@ Personal library of agent skills for [Claude Code](https://claude.com/claude-cod
 |---|---|
 | **audit-fix-push** | Runs `lexa audit`, fixes high-severity/warning findings until clean, then commits and pushes without pausing. Has a Codex-specific variant (`variants/codex/`). |
 | **awwwards-design** | Builds award-winning websites: advanced animations, creative interactions, distinctive visuals. For portfolios, agency showcases, launches — anything needing wow factor. |
+| **effective-agent-skills** | Complete guide to authoring agent skills: anatomy, progressive disclosure, design patterns, anti-patterns, testing, security. Third-party — from [davidondrej/skills](https://github.com/davidondrej/skills) @ `50f4b7666347`. |
 | **caveman** | Ultra-compressed communication mode. Cuts token usage ~75% by dropping filler, articles, pleasantries while keeping full technical accuracy. |
 | **grill-me** | Interviews you relentlessly about a plan or design, one question at a time, until shared understanding — exploring the codebase itself when it can. |
 | **grill-with-docs** | Grilling session that challenges a plan against your project's domain model and updates docs (CONTEXT.md, ADRs) inline as decisions crystallise. |
