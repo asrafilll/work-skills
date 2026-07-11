@@ -1,6 +1,6 @@
 ---
 name: awwwards-design
-description: Create award-winning, memorable websites with advanced animations, creative interactions, and distinctive visual experiences. Use this skill when building sites that need to be exceptional—portfolio sites, agency showcases, product launches, or any project where "wow factor" matters.
+description: Create Awwwards-style websites with advanced animations, creative interactions, and distinctive visual experiences. Use ONLY when the user explicitly writes "awwwards" (or misspellings like "awwards", "awards-style") in their request — never fire on general landing page, portfolio, or design requests without that keyword; those route to taste-skill.
 license: MIT
 ---
 
