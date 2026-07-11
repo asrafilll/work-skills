@@ -10,7 +10,6 @@ Personal library of agent skills for [Claude Code](https://claude.com/claude-cod
 | **awwwards-design** | Builds award-winning websites: advanced animations, creative interactions, distinctive visuals. For portfolios, agency showcases, launches — anything needing wow factor. |
 | **effective-agent-skills** | Complete guide to authoring agent skills: anatomy, progressive disclosure, design patterns, anti-patterns, testing, security. Third-party — from [davidondrej/skills](https://github.com/davidondrej/skills) @ `50f4b7666347`. |
 | **caveman** | Ultra-compressed communication mode. Cuts token usage ~75% by dropping filler, articles, pleasantries while keeping full technical accuracy. |
-| **design-taste-frontend** | Anti-slop frontend skill for landing pages, portfolios, and redesigns: brief inference, design dials, real design-system mapping, AI-tell bans, strict pre-flight checklist. Third-party — from [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) @ `3c7017d636c3` (folder renamed to match frontmatter name; content untouched). |
 | **grill-me** | Interviews you relentlessly about a plan or design, one question at a time, until shared understanding — exploring the codebase itself when it can. |
 | **grill-with-docs** | Grilling session that challenges a plan against your project's domain model and updates docs (CONTEXT.md, ADRs) inline as decisions crystallise. |
 | **handoff** | Compacts the current conversation into a handoff document another agent can pick up. |
@@ -19,6 +18,7 @@ Personal library of agent skills for [Claude Code](https://claude.com/claude-cod
 | **ponytail** | Lazy senior dev mode: YAGNI, stdlib first, no unrequested abstractions. For any coding task. |
 | **pre-flight** | Pre-development briefing before building a feature or fixing a bug. Recons the repo, then recaps: what changes, current state, assumptions (verified/unverified), business flow impact, expected outcomes — and gates on your confirmation before any code. |
 | **procurement-flow** | Reverse-engineers the end-to-end business flow implemented in a repo you're new to. Produces FLOW.md with mermaid diagrams: pipeline, state machines, approval chains. |
+| **taste-skill** | Anti-slop frontend skill for landing pages, portfolios, and redesigns: brief inference, design dials, real design-system mapping, AI-tell bans, strict pre-flight checklist. Third-party — from [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) @ `3c7017d636c3` (frontmatter name aligned to folder; body untouched). |
 | **security-and-hardening** | Security-first development: threat modeling (STRIDE), OWASP Top 10 prevention patterns, input validation, secrets management, LLM-feature security, review checklists. Third-party — from [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) @ `d1983929db65` (dangling references/ pointers removed). |
 | **to-issues** | Breaks a plan/spec/PRD into independently-grabbable tracker issues using tracer-bullet vertical slices. |
 | **to-prd** | Turns the current conversation into a PRD and publishes it to the project issue tracker. |
