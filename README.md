@@ -17,6 +17,7 @@ Personal library of agent skills for [Claude Code](https://claude.com/claude-cod
 | **ponytail** | Lazy senior dev mode: YAGNI, stdlib first, no unrequested abstractions. For any coding task. |
 | **pre-flight** | Pre-development briefing before building a feature or fixing a bug. Recons the repo, then recaps: what changes, current state, assumptions (verified/unverified), business flow impact, expected outcomes — and gates on your confirmation before any code. |
 | **procurement-flow** | Reverse-engineers the end-to-end business flow implemented in a repo you're new to. Produces FLOW.md with mermaid diagrams: pipeline, state machines, approval chains. |
+| **security-and-hardening** | Security-first development: threat modeling (STRIDE), OWASP Top 10 prevention patterns, input validation, secrets management, LLM-feature security, review checklists. Third-party — from [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) @ `d1983929db65` (dangling references/ pointers removed). |
 | **to-issues** | Breaks a plan/spec/PRD into independently-grabbable tracker issues using tracer-bullet vertical slices. |
 | **to-prd** | Turns the current conversation into a PRD and publishes it to the project issue tracker. |
 | **whats-next** | Product ideation from repo analysis. Maps the app + business process, researches the market, builds an evidence-backed SWOT, and proposes ranked next features — each with a why, SWOT quadrant, and expected business outcome. Chains into pre-flight. |
