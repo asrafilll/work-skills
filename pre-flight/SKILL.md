@@ -1,6 +1,6 @@
 ---
 name: pre-flight
-description: Pre-development briefing before building a feature or fixing a bug. Analyzes the repo (Lexa index if available, otherwise direct scan), maps the requested change against what already exists, and outputs a recap covering what the change is, the current state, what will change, assumptions, and the business flow impact. Use before starting a feature or bugfix, or when the user says "pre-flight".
+description: Pre-development briefing for a feature or bugfix the user already has in mind. Recons the repo and reflects the planned change against what exists, ending in a confirm gate before any code. Use before starting a feature or bugfix, or when the user says "pre-flight", "brief me on this feature", "recap before I build". Differs from grill-me (which interrogates the user about their plan) — pre-flight interrogates the repo; differs from whats-next (which proposes features) — here the user brings the feature.
 ---
 
 # Pre-Flight

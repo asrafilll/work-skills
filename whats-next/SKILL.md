@@ -1,6 +1,6 @@
 ---
 name: whats-next
-description: Product ideation from repo analysis. Analyzes the app and its business process (Lexa index if available, otherwise direct scan), optionally researches the market on the internet, builds a SWOT of the current product, and proposes the next features worth building — each with a why, the SWOT quadrant it serves, and expected business outcome. Use when the user asks "what's next", "what should we build next", wants feature ideas, or a product roadmap suggestion for an existing repo.
+description: Product ideation from repo and market analysis — the AI proposes what to build next, backed by an evidence-based SWOT. Use when the user asks "what's next", "what should we build next", wants feature ideas, or a product roadmap suggestion for an existing repo. Differs from pre-flight — pre-flight briefs a feature the user already chose; whats-next proposes the features.
 ---
 
 # What's Next
@@ -24,6 +24,8 @@ Priority reading order (these say what the business does):
 4. i18n/copy files: reveal user-facing language, target market, gaps
 
 Output of this step (keep internal): feature inventory, target user, business model, domain, maturity of each feature.
+
+If recon shows the repo is not an end-user product (a library, CLI, or infra tool), say so and reframe: "users" become developers, "market" becomes the ecosystem of comparable tools — or ask whether to proceed at all.
 
 ## Step 2 — Market context (internet, if available)
 
