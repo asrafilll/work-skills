@@ -1,13 +1,13 @@
 ---
 name: audit-fix-push
-description: Run a repository audit with `lexa audit --max 25`, fix any high-severity or warning findings, repeat until clean, then commit all current repository changes with a clear message and push to GitHub without pausing for confirmation. Use when the user asks to audit and fix a repo before committing, clean Lexa audit findings, or perform an audit-fix-commit-push workflow.
+description: Run a repository audit with `lexa audit --max 25`, fix any high-severity or warning findings, repeat until clean, then commit all current repository changes with a clear message, push the branch, and open a GitHub pull request without pausing for confirmation. Use when the user asks to audit and fix a repo before committing, clean Lexa audit findings, or perform an audit-fix-commit-PR workflow.
 ---
 
 # Audit Fix Push
 
 ## Overview
 
-Take a repository from Lexa audit findings to a pushed commit. Lexa is the audit tool for this workflow; do not modify the Lexa skill/CLI itself, only use it.
+Take a repository from Lexa audit findings to an open pull request. Lexa is the audit tool for this workflow; do not modify the Lexa skill/CLI itself, only use it.
 
 ## Workflow
 
@@ -44,14 +44,43 @@ Take a repository from Lexa audit findings to a pushed commit. Lexa is the audit
    - If `git status --short` shows an obvious secret, credentials file, or build artifact, pause and ask the user before staging it.
    - Commit with a concise, specific message summarizing the change (follow this repo's existing commit style / Conventional Commits if that's the convention).
 
-7. Push:
+7. Push the branch:
    - Check the branch with `git branch --show-current` and remotes with `git remote -v`.
-   - Push immediately, no confirmation pause: `git push` (or `git push -u origin <branch>` if no upstream exists).
+   - If currently on the default branch (`main`/`master`), create a descriptive branch first (e.g. `git checkout -b audit/fix-lexa-findings`) so the PR has a source branch. Never push audit fixes directly to the default branch.
+   - Push immediately, no confirmation pause: `git push -u origin <branch>`.
    - If authentication, permissions, or network access blocks the push, report the failed command and blocker.
+
+8. Open a pull request:
+   - Check for an existing PR from this branch first: `gh pr view --json url,state 2>/dev/null`. If an open PR already exists, skip creation and reuse its URL.
+   - Otherwise create one with `gh pr create` targeting the default branch:
+     - **Title**: concise and specific to what actually changed (e.g. `Fix Lexa audit findings: unused exports and dead code in parser`), following this repo's PR title convention if one is visible in `gh pr list`. Never a generic title like "Audit fixes".
+     - **Body**: use a HEREDOC and include:
+       - `## Summary` — what the audit found and what was fixed, grouped by theme (2–5 bullets).
+       - `## Audit result` — before/after finding counts (e.g. `3 high, 5 warnings → 0 high, 0 warnings`), plus any findings suppressed via config and why.
+       - `## Verification` — project checks run (lint, typecheck, tests) and their results.
+   - Example:
+
+     ```bash
+     gh pr create --title "Fix Lexa audit findings: <specifics>" --body "$(cat <<'EOF'
+     ## Summary
+     - <themed bullet of fixes>
+
+     ## Audit result
+     <before> → 0 high, 0 warnings
+
+     ## Verification
+     - <check>: <result>
+     EOF
+     )"
+     ```
+
+   - Do not append any attribution footer (e.g. "🤖 Generated with Claude Code" or "Co-Authored-By") to the PR body — the user explicitly wants clean PR descriptions.
+   - If `gh` is not installed or not authenticated (`gh auth status` fails), report the blocker and give the compare URL (`https://github.com/<owner>/<repo>/compare/<branch>?expand=1`) so the user can open the PR manually.
+   - Capture the PR URL from the `gh pr create` output.
 
 ## Command Approval Behavior
 
-- This skill is a standing user instruction to auto-commit and auto-push: do not ask "should I push?" or "should I commit?" before running `git add`, `git commit`, or `git push` as part of this workflow — proceed directly.
+- This skill is a standing user instruction to auto-commit, auto-push, and auto-open a PR: do not ask "should I push?", "should I commit?", or "should I open a PR?" before running `git add`, `git commit`, `git push`, or `gh pr create` as part of this workflow — proceed directly.
 
 ## Safety Rules
 
@@ -67,3 +96,4 @@ At the end, report:
 - Project checks run and their results.
 - Commit hash and commit message.
 - Remote and branch pushed (or why push was skipped/blocked).
+- **PR URL on its own line as the last line of the report** (e.g. `https://github.com/owner/repo/pull/2`) so the user can click it or open it in the browser — or why PR creation was skipped/blocked.

@@ -1,0 +1,7 @@
+# Lexa audit config for this skills library.
+# This repo is markdown skill documents; third-party skills (e.g. taste-skill)
+# are vendored verbatim from upstream and must not be split to keep diffs
+# against upstream meaningful, so the large-file rule is disabled.
+
+[audit.rules]
+"file.large" = "off"
