@@ -1,4 +1,4 @@
 interface:
   display_name: "Audit Fix Push"
-  short_description: "Audit, fix, commit, and push repo changes"
-  default_prompt: "Use $audit-fix-push to audit the repo, fix findings, commit all changes, and push without pausing for approved Git commands."
+  short_description: "Review, fix, verify, and publish with one agent"
+  default_prompt: "Use $audit-fix-push to review the intended changes with one agent, fix and re-review until clean, verify, commit the whole reviewed worktree, push, and open or reuse a pull request."

@@ -6,7 +6,7 @@ Personal library of agent skills for [Claude Code](https://claude.com/claude-cod
 
 | Skill | What it does |
 |---|---|
-| **audit-fix-push** | Runs `lexa audit`, fixes high-severity/warning findings until clean, then commits and pushes without pausing. Has a Codex-specific variant (`variants/codex/`). |
+| **audit-fix-push** | Single-agent PR readiness loop: semantic review + Lexa audit, focused fixes and fresh re-review until clean, project verification, then commit, push, and PR. Has a Codex-specific variant (`variants/codex/`). |
 | **awwwards-design** | Builds award-winning websites: advanced animations, creative interactions, distinctive visuals. For portfolios, agency showcases, launches — anything needing wow factor. |
 | **effective-agent-skills** | Complete guide to authoring agent skills: anatomy, progressive disclosure, design patterns, anti-patterns, testing, security. Third-party — from [davidondrej/skills](https://github.com/davidondrej/skills) @ `50f4b7666347`. |
 | **caveman** | Ultra-compressed communication mode. Cuts token usage ~75% by dropping filler, articles, pleasantries while keeping full technical accuracy. |
