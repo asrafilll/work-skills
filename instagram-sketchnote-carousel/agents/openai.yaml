@@ -1,0 +1,4 @@
+interface:
+  display_name: "Instagram Sketchnote Carousel"
+  short_description: "Create consistent educational carousel slides"
+  default_prompt: "Use $instagram-sketchnote-carousel to turn this topic into a concise educational Instagram carousel."

@@ -13,6 +13,7 @@ Personal library of agent skills for [Claude Code](https://claude.com/claude-cod
 | **grill-me** | Interviews you relentlessly about a plan or design, one question at a time, until shared understanding — exploring the codebase itself when it can. |
 | **grill-with-docs** | Grilling session that challenges a plan against your project's domain model and updates docs (CONTEXT.md, ADRs) inline as decisions crystallise. |
 | **handoff** | Compacts the current conversation into a handoff document another agent can pick up. |
+| **instagram-sketchnote-carousel** | Creates concise educational Instagram carousels as separate 1080x1350 editorial sketchnote images with a consistent hand-drawn system and visual QA. |
 | **lexa** | Teaches the agent to use the Lexa CLI/MCP for token-efficient codebase intelligence: symbol lookup, dependency tracing, context bundles, hash-aware edits. |
 | **make-interfaces-feel-better** | Design engineering details that make UI feel polished: concentric border radius, optical alignment, layered shadows, staggered animations, tabular numbers, hit areas. Third-party — from [jakubkrehel/make-interfaces-feel-better](https://github.com/jakubkrehel/make-interfaces-feel-better) @ `366f0f86efcb`. |
 | **ponytail** | Lazy senior dev mode: YAGNI, stdlib first, no unrequested abstractions. For any coding task. |
@@ -65,6 +66,8 @@ Some skills behave differently per agent. When a skill has a `variants/codex/` f
 ```
 skill-name/
 ├── SKILL.md              # frontmatter (name, description) + instructions
+├── agents/
+│   └── openai.yaml       # optional Codex UI metadata
 ├── *.md                  # optional reference files
 └── variants/
     └── codex/            # optional Codex-specific version
